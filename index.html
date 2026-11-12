@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChiliGuard AI – Chili Leaf Disease Detection</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🌶️</span>
+    <span class="brand-name">ChiliGuard <span class="brand-ai">AI</span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link active" onclick="showSection('home')">Home</a></li>
+    <li><a href="#detect" class="nav-link" onclick="showSection('detect')">Detect Disease</a></li>
+    <li><a href="#diseases" class="nav-link" onclick="showSection('diseases')">Disease Library</a></li>
+    <li><a href="#treatment" class="nav-link" onclick="showSection('treatment')">Treatments</a></li>
+    <li><a href="#experts" class="nav-link" onclick="showSection('experts')">Meet Experts</a></li>
+    <li><a href="#about" class="nav-link" onclick="showSection('about')">About</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════ -->
+<section id="home" class="section active">
+  <div class="hero">
+    <div class="hero-bg">
+      <div class="particle" style="--i:1"></div>
+      <div class="particle" style="--i:2"></div>
+      <div class="particle" style="--i:3"></div>
+      <div class="particle" style="--i:4"></div>
+      <div class="particle" style="--i:5"></div>
+      <div class="particle" style="--i:6"></div>
+      <div class="particle" style="--i:7"></div>
+      <div class="particle" style="--i:8"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fa fa-leaf"></i> AI-Powered Plant Health</div>
+      <h1 class="hero-title">Advanced Chili Leaf<br><span class="gradient-text">Disease Detection</span></h1>
+      <p class="hero-sub">Upload a photo of your chili plant leaf and our AI will instantly diagnose diseases, show confidence percentages, and recommend treatments — all in seconds.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showSection('detect')">
+          <i class="fa fa-camera"></i> Scan Leaf Now
+        </button>
+        <button class="btn-outline" onclick="showSection('diseases')">
+          <i class="fa fa-book-open"></i> View Disease Library
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Diseases Detected</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">95%</span><span class="stat-label">AI Accuracy</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Available</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Free</span><span class="stat-label">To Use</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="scan-animation">
+            <div class="scan-line"></div>
+            <div class="leaf-emoji">🌶️</div>
+            <div class="scan-result-preview">
+              <div class="preview-bar"></div>
+              <div class="preview-bar short"></div>
+              <div class="preview-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-card card-1">
+        <i class="fa fa-check-circle"></i>
+        <span>Anthracnose Detected</span>
+        <strong>87%</strong>
+      </div>
+      <div class="floating-card card-2">
+        <i class="fa fa-prescription-bottle-alt"></i>
+        <span>Treatment Ready</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="features-section">
+    <h2 class="section-title">Why <span class="gradient-text">ChiliGuard AI?</span></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-bolt"></i></div>
+        <h3>Instant Detection</h3>
+        <p>Get disease diagnosis in under 3 seconds using advanced computer vision AI.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-chart-pie"></i></div>
+        <h3>Confidence Score</h3>
+        <p>See exact percentage confidence for each detected disease and healthy status.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-capsules"></i></div>
+        <h3>Treatment Plans</h3>
+        <p>Receive detailed organic and chemical treatment recommendations instantly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-user-md"></i></div>
+        <h3>Expert Consultation</h3>
+        <p>Connect with certified plant pathologists for professional advice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-history"></i></div>
+        <h3>Scan History</h3>
+        <p>Track your plant health over time with a full scan history dashboard.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa fa-shield-alt"></i></div>
+        <h3>Prevention Tips</h3>
+        <p>Proactive prevention strategies to keep your chili crops disease-free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     DETECT SECTION
+════════════════════════════════════════════════ -->
+<section id="detect" class="section">
+  <div class="detect-wrapper">
+    <div class="page-header">
+      <h2>🔬 Disease Detection Lab</h2>
+      <p>Upload a chili leaf image to get an instant AI-powered disease diagnosis</p>
+    </div>
+
+    <div class="detect-layout">
+      <!-- Upload Panel -->
+      <div class="upload-panel">
+        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('leafInput').click()" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+          <div class="upload-idle" id="uploadIdle">
+            <div class="upload-icon-wrap">
+              <i class="fa fa-cloud-upload-alt upload-icon"></i>
+            </div>
+            <h3>Drop Your Leaf Image Here</h3>
+            <p>or click to browse files</p>
+            <span class="upload-formats">Supports: JPG, PNG, WEBP · Max 10MB</span>
+          </div>
+          <div class="upload-preview" id="uploadPreview" style="display:none;">
+            <img id="previewImg" src="" alt="Leaf Preview"/>
+            <div class="preview-overlay">
+              <i class="fa fa-sync-alt"></i> Change Image
+            </div>
+          </div>
+        </div>
+        <input type="file" id="leafInput" accept="image/*" style="display:none" onchange="handleFileSelect(event)"/>
+
+        <div class="detect-options">
+          <div class="option-row">
+            <label><i class="fa fa-camera"></i> Use Camera</label>
+            <label class="toggle">
+              <input type="checkbox" id="cameraToggle" onchange="toggleCamera()"/>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Camera View -->
+        <div id="cameraSection" style="display:none;" class="camera-section">
+          <video id="cameraFeed" autoplay playsinline></video>
+          <button class="btn-capture" onclick="capturePhoto()">
+            <i class="fa fa-circle"></i> Capture
+          </button>
+          <canvas id="captureCanvas" style="display:none;"></canvas>
+        </div>
+
+        <button class="btn-detect" id="detectBtn" onclick="analyzeLeaf()" disabled>
+          <i class="fa fa-search"></i> Analyze Leaf
+        </button>
+
+        <!-- Sample Images -->
+        <div class="sample-section">
+          <p class="sample-label">Try sample images:</p>
+          <div class="sample-images">
+            <div class="sample-img" onclick="loadSample('healthy')" title="Healthy Leaf">
+              <span>🟢</span><small>Healthy</small>
+            </div>
+            <div class="sample-img" onclick="loadSample('anthracnose')" title="Anthracnose">
+              <span>🟤</span><small>Anthracnose</small>
+            </div>
+            <div class="sample-img" onclick="loadSample('bacterial_spot')" title="Bacterial Spot">
+              <span>🟡</span><small>Bacterial Spot</small>
+            </div>
+            <div class="sample-img" onclick="loadSample('leaf_curl')" title="Leaf Curl">
+              <span>🔴</span><small>Leaf Curl</small>
+            </div>
+            <div class="sample-img" onclick="loadSample('powdery_mildew')" title="Powdery Mildew">
+              <span>⚪</span><small>Powdery Mildew</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="results-panel" id="resultsPanel">
+        <!-- Initial State -->
+        <div class="results-empty" id="resultsEmpty">
+          <div class="empty-icon">🔍</div>
+          <h3>Ready to Scan</h3>
+          <p>Upload a leaf image and click <strong>Analyze Leaf</strong> to get your diagnosis.</p>
+          <div class="tip-box">
+            <i class="fa fa-lightbulb"></i>
+            <span><strong>Tip:</strong> For best results, use a clear, well-lit photo of the leaf against a plain background.</span>
+          </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="results-loading" id="resultsLoading" style="display:none;">
+          <div class="ai-loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring ring2"></div>
+            <div class="loader-ring ring3"></div>
+            <div class="loader-leaf">🌿</div>
+          </div>
+          <h3>AI Analyzing Leaf...</h3>
+          <div class="loading-steps" id="loadingSteps">
+            <div class="load-step active" id="step1">🔎 Preprocessing image...</div>
+            <div class="load-step" id="step2">🧠 Running neural network...</div>
+            <div class="load-step" id="step3">🔬 Detecting disease patterns...</div>
+            <div class="load-step" id="step4">📋 Generating report...</div>
+          </div>
+        </div>
+
+        <!-- Results State -->
+        <div class="results-content" id="resultsContent" style="display:none;">
+          <!-- Main Diagnosis -->
+          <div class="diagnosis-card" id="diagnosisCard">
+            <div class="diagnosis-header">
+              <div class="diagnosis-icon" id="diagIcon">🦠</div>
+              <div class="diagnosis-info">
+                <span class="diagnosis-label">Primary Diagnosis</span>
+                <h3 id="diagName">Anthracnose</h3>
+                <span class="diagnosis-severity" id="diagSeverity">High Severity</span>
+              </div>
+              <div class="diagnosis-badge" id="diagBadge">87%</div>
+            </div>
+
+            <!-- Confidence Bars -->
+            <div class="confidence-section">
+              <h4><i class="fa fa-chart-bar"></i> Detection Confidence</h4>
+              <div class="confidence-bars" id="confidenceBars">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+
+            <!-- Disease Details -->
+            <div class="disease-details" id="diseaseDetails">
+              <div class="detail-tabs">
+                <button class="detail-tab active" onclick="switchTab('overview', this)">Overview</button>
+                <button class="detail-tab" onclick="switchTab('symptoms', this)">Symptoms</button>
+                <button class="detail-tab" onclick="switchTab('causes', this)">Causes</button>
+              </div>
+              <div class="detail-content" id="tabContent">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Treatment Card -->
+          <div class="treatment-result-card" id="treatmentCard">
+            <h4><i class="fa fa-prescription-bottle-alt"></i> Recommended Treatment</h4>
+            <div id="treatmentContent"><!-- Filled by JS --></div>
+            <button class="btn-full-treatment" onclick="showSection('treatment')">
+              <i class="fa fa-external-link-alt"></i> Full Treatment Guide
+            </button>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="result-actions">
+            <button class="btn-expert" onclick="showSection('experts')">
+              <i class="fa fa-user-md"></i> Consult Expert
+            </button>
+            <button class="btn-share" onclick="downloadReport()">
+              <i class="fa fa-download"></i> Download Report
+            </button>
+            <button class="btn-rescan" onclick="resetScan()">
+              <i class="fa fa-redo"></i> New Scan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     DISEASE LIBRARY
+════════════════════════════════════════════════ -->
+<section id="diseases" class="section">
+  <div class="page-header">
+    <h2>📚 Disease Library</h2>
+    <p>Comprehensive guide to all chili leaf diseases detected by our AI system</p>
+  </div>
+  <div class="library-search">
+    <input type="text" id="diseaseSearch" placeholder="🔍 Search diseases..." oninput="filterDiseases(this.value)"/>
+    <div class="filter-tags">
+      <button class="filter-tag active" onclick="filterByType('all', this)">All</button>
+      <button class="filter-tag" onclick="filterByType('fungal', this)">Fungal</button>
+      <button class="filter-tag" onclick="filterByType('bacterial', this)">Bacterial</button>
+      <button class="filter-tag" onclick="filterByType('viral', this)">Viral</button>
+      <button class="filter-tag" onclick="filterByType('nutrient', this)">Nutrient</button>
+      <button class="filter-tag" onclick="filterByType('healthy', this)">Healthy</button>
+    </div>
+  </div>
+  <div class="disease-grid" id="diseaseGrid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TREATMENT SECTION
+════════════════════════════════════════════════ -->
+<section id="treatment" class="section">
+  <div class="page-header">
+    <h2>💊 Treatment Center</h2>
+    <p>Detailed treatment protocols for all chili leaf diseases</p>
+  </div>
+  <div class="treatment-layout">
+    <div class="treatment-sidebar">
+      <h4>Select Disease</h4>
+      <ul id="treatmentNav"><!-- Filled by JS --></ul>
+    </div>
+    <div class="treatment-main" id="treatmentMain">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     EXPERTS SECTION
+════════════════════════════════════════════════ -->
+<section id="experts" class="section">
+  <div class="page-header">
+    <h2>👨‍🔬 Meet Our Experts</h2>
+    <p>Connect with certified plant pathologists and agricultural scientists</p>
+  </div>
+
+  <!-- Consultation Form -->
+  <div class="consultation-banner">
+    <div class="consultation-text">
+      <h3>🌶️ Need Personalized Help?</h3>
+      <p>Submit your chili plant issue and get a response from our expert team within 24 hours.</p>
+    </div>
+    <button class="btn-primary" onclick="toggleConsultForm()">
+      <i class="fa fa-paper-plane"></i> Request Consultation
+    </button>
+  </div>
+
+  <div class="consult-form-wrapper" id="consultForm" style="display:none;">
+    <div class="consult-form">
+      <h4>📋 Consultation Request</h4>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" id="cName" placeholder="Enter your full name"/>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="cEmail" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" id="cPhone" placeholder="+1 (555) 000-0000"/>
+        </div>
+        <div class="form-group">
+          <label>Select Expert *</label>
+          <select id="cExpert">
+            <option value="">-- Choose an Expert --</option>
+            <option>Dr. Maria Santos – Plant Pathologist</option>
+            <option>Dr. Raj Patel – Agricultural Scientist</option>
+            <option>Dr. Li Wei – Fungal Disease Specialist</option>
+            <option>Dr. Ahmed Hassan – Soil & Nutrition Expert</option>
+            <option>Dr. Elena Kovac – Viral Disease Expert</option>
+            <option>Dr. Carlos Mendez – Pest Management Specialist</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Disease / Issue *</label>
+          <input type="text" id="cDisease" placeholder="Describe the disease or issue observed"/>
+        </div>
+        <div class="form-group full-width">
+          <label>Detailed Description *</label>
+          <textarea id="cDesc" rows="4" placeholder="Describe your plant issue, when it started, affected area, any treatments tried..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Urgency Level</label>
+          <select id="cUrgency">
+            <option>Normal (5–7 days)</option>
+            <option>Priority (2–3 days)</option>
+            <option>Urgent (24 hours)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Contact Method</label>
+          <select id="cContact">
+            <option>Email</option>
+            <option>Phone Call</option>
+            <option>Video Call</option>
+            <option>WhatsApp</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn-primary" onclick="submitConsultation()">
+          <i class="fa fa-paper-plane"></i> Submit Request
+        </button>
+        <button class="btn-outline" onclick="toggleConsultForm()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experts Grid -->
+  <div class="experts-grid" id="expertsGrid">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- Success Message -->
+  <div class="consult-success" id="consultSuccess" style="display:none;">
+    <div class="success-content">
+      <div class="success-icon">✅</div>
+      <h3>Consultation Request Sent!</h3>
+      <p>Your request has been submitted. Our expert will contact you within the specified timeframe.</p>
+      <button class="btn-primary" onclick="closeSuccess()">Done</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="page-header">
+    <h2>ℹ️ About ChiliGuard AI</h2>
+    <p>Our mission to protect chili farmers with cutting-edge AI technology</p>
+  </div>
+  <div class="about-layout">
+    <div class="about-story">
+      <h3>Our Story</h3>
+      <p>ChiliGuard AI was founded by a team of agricultural scientists and AI engineers passionate about helping farmers protect their crops. With chili being one of the world's most important spice crops, disease management is critical to ensuring food security and farmer livelihoods.</p>
+      <p>Our AI model was trained on over <strong>50,000+ labeled images</strong> of chili leaves across 12+ disease categories, achieving a detection accuracy of <strong>95%+</strong> in independent tests.</p>
+
+      <h3>Technology Stack</h3>
+      <div class="tech-stack">
+        <div class="tech-item"><i class="fa fa-brain"></i> Deep Learning CNN</div>
+        <div class="tech-item"><i class="fa fa-eye"></i> Computer Vision</div>
+        <div class="tech-item"><i class="fa fa-code"></i> TensorFlow.js</div>
+        <div class="tech-item"><i class="fa fa-chart-line"></i> Transfer Learning</div>
+      </div>
+
+      <h3>Disease Detection Accuracy</h3>
+      <div class="accuracy-bars">
+        <div class="acc-row"><span>Anthracnose</span><div class="acc-bar"><div class="acc-fill" style="width:95%">95%</div></div></div>
+        <div class="acc-row"><span>Bacterial Spot</span><div class="acc-bar"><div class="acc-fill" style="width:93%">93%</div></div></div>
+        <div class="acc-row"><span>Leaf Curl Virus</span><div class="acc-bar"><div class="acc-fill" style="width:91%">91%</div></div></div>
+        <div class="acc-row"><span>Powdery Mildew</span><div class="acc-bar"><div class="acc-fill" style="width:94%">94%</div></div></div>
+        <div class="acc-row"><span>Healthy Leaf</span><div class="acc-bar"><div class="acc-fill" style="width:98%">98%</div></div></div>
+      </div>
+    </div>
+
+    <div class="about-side">
+      <div class="about-stat-card">
+        <i class="fa fa-seedling"></i>
+        <h3>50,000+</h3>
+        <p>Training Images</p>
+      </div>
+      <div class="about-stat-card">
+        <i class="fa fa-microscope"></i>
+        <h3>12+</h3>
+        <p>Diseases Detected</p>
+      </div>
+      <div class="about-stat-card">
+        <i class="fa fa-globe-asia"></i>
+        <h3>15+</h3>
+        <p>Countries Used</p>
+      </div>
+      <div class="about-stat-card">
+        <i class="fa fa-users"></i>
+        <h3>10,000+</h3>
+        <p>Farmers Helped</p>
+      </div>
+
+      <div class="disclaimer-box">
+        <h4><i class="fa fa-exclamation-triangle"></i> Disclaimer</h4>
+        <p>ChiliGuard AI provides AI-based disease detection as a decision-support tool. For critical agricultural decisions, always consult a certified plant pathologist or agricultural extension officer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span class="brand-icon">🌶️</span>
+      <span class="brand-name">ChiliGuard <span class="brand-ai">AI</span></span>
+      <p>Protecting chili crops with artificial intelligence</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a onclick="showSection('detect')">Disease Detection</a>
+      <a onclick="showSection('diseases')">Disease Library</a>
+      <a onclick="showSection('treatment')">Treatments</a>
+      <a onclick="showSection('experts')">Meet Experts</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><i class="fa fa-envelope"></i> support@chiliguardai.com</p>
+      <p><i class="fa fa-phone"></i> +1 (800) CHILI-AI</p>
+      <p><i class="fa fa-map-marker-alt"></i> Agricultural Tech Hub</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 ChiliGuard AI. Built with ❤️ for farmers worldwide.</p>
+  </div>
+</footer>
+
+<!-- Disease Detail Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()"><i class="fa fa-times"></i></button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
